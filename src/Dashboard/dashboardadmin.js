@@ -21,7 +21,8 @@ import { mainListItems, secondaryListItems } from './listItems';
 import ComplexButton from './Paciente/Style/ComplexButton';
 import Principal from './DashboardPrincipal/Principal';
 import  Comp1  from "../Dashboard/Paciente/Pages/AddPaciente";
-
+import Patients from "../Dashboard/Paciente/Pages/Pacientes"
+import Reports from "../Dashboard/Reports/reports"
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -158,7 +159,8 @@ class Dashboard extends React.Component {
             <main className={classes.content}>
               <div className={classes.appBarSpacer} />
               <Route exact path="/Complex" component={ComplexButton} />
-              <Route path={'/Chart'} component={Principal} />
+              <Route path={'/Chart'} component={Patients} />
+              <Route path={'/Reports'} component={Reports} />
               <Route path={'/DashBoard/CrearPaciente'}  component={Comp1}/>
             </main>
           </div>

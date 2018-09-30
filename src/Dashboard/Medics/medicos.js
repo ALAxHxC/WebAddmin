@@ -10,7 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
-export default class Patients extends React.Component {
+export default class Medicos extends React.Component {
   constructor(props) {
     super(props);
     this.state = {

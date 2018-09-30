@@ -1,15 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import axios from 'axios';
+
 
 import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import AddIcon from '@material-ui/icons/Add';
+import GetMedico from './Pages/getMedic';
+import Modal from '@material-ui/core/Modal';
+
+
+import Typography from '@material-ui/core/Typography';
+
 export default class Medics extends React.Component {
   constructor(props) {
     super(props);
@@ -17,9 +21,20 @@ export default class Medics extends React.Component {
       error: null,
       isLoaded: false,
       items: [],
-      user: null
+      user: null,
+      open: false,
     };
   }
+  getModalStyle() {
+  const top = 50 ;
+  const left = 50;
+
+  return {  
+    top: `${top}%`,
+    left: `${left}%`,
+    transform: `translate(-${top}%, -${left}%)`,
+  };
+}
 
   componentDidMount() {
     fetch("https://monitora-pro.herokuapp.com/users/medic")
@@ -27,8 +42,11 @@ export default class Medics extends React.Component {
       .then(
         (result) => {
           this.setState({
+            user: null,
+            open: false,
             isLoaded: true,
             items: result,
+            
           });
         },
         // Note: it's important to handle errors here
@@ -36,17 +54,28 @@ export default class Medics extends React.Component {
         // exceptions from actual bugs in components.
         (error) => {
           this.setState({
+            user: null,
+            open: false,
             isLoaded: true,
             error
           });
         }
       )
   }
-   handleClick(id,e) {
+  handleClick(id, e) {
     e.preventDefault();
-    
-    console.log('The link was clicked.',id);
+   this.state.open =!this.state.open;
+   console.log(this.state.open)
+    console.log('The link was clicked.', id);
+    this.setState({ open: true });
   }
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+  
+  handleOpen = () => {
+    this.setState({ open: true });
+  };
   render() {
     const { error, isLoaded, items } = this.state;
     if (error) {

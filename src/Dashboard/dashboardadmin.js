@@ -25,6 +25,8 @@ import Patients from "../Dashboard/Paciente/Pages/Pacientes"
 import Reports from "../Dashboard/Reports/reports"
 //import MainMedic from "../Dashboard/Medics/main_medics";
 import Medics from "../Dashboard/Medics/medicos";
+import getMedico from "../Dashboard/Medics/Pages/getMedic";
+import addMedic from "../Dashboard/Medics/Pages/addMedic";
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -164,6 +166,7 @@ class Dashboard extends React.Component {
               <Route path={'/Chart'} component={Patients} />
               <Route path={'/Reports'} component={Reports} />
               <Route path={'/Medics'} component={Medics} />
+              <Route path={'/add'} component={addMedic}/>
               <Route path={'/DashBoard/CrearPaciente'}  component={Comp1}/>
             </main>
           </div>

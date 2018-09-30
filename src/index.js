@@ -6,7 +6,7 @@ import Reports from './Dashboard/Reports/reports';
 import Medics from './Dashboard/Medics/medicos';
 import RootComponent from './Root';
 import ComplexButton from './Dashboard/Paciente/Style/ComplexButton';
-
+import addMedic from "./Dashboard/Medics/Pages/addMedic";
 class App extends Component {
     render() {
         return (
@@ -18,6 +18,7 @@ class App extends Component {
                     <Route path={'/ComplexButton'} component={ComplexButton} />
                     <Route path={'/reports'} component={Reports} />
                     <Route path={'/medics'} component={Medics}/>
+                    <Route path={'/add'} component={addMedic}/>
                 </React.Fragment>
             </Router>
         );

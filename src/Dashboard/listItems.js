@@ -24,17 +24,17 @@ export const mainListItems = (
       </ListItemIcon>
       <ListItemText primary="Pacientes" />
     </ListItem>
-    <ListItem button>
+    <ListItem button component={NavLink} to="/Medics" >
       <ListItemIcon>
         <PeopleIcon />
       </ListItemIcon>
-      <ListItemText primary="Médicos" />
+      <ListItemText primary="Médicos"/>
     </ListItem>
     <ListItem button  button component={NavLink} to="/Reports">
       <ListItemIcon>
         <BarChartIcon />
       </ListItemIcon>
-      <ListItemText primary="Reportes" />
+      <ListItemText primary="Reportes" component={NavLink} to="/Chart" />
     </ListItem>
   
   </div>

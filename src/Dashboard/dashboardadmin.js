@@ -23,6 +23,8 @@ import Principal from './DashboardPrincipal/Principal';
 import  Comp1  from "../Dashboard/Paciente/Pages/AddPaciente";
 import Patients from "../Dashboard/Paciente/Pages/Pacientes"
 import Reports from "../Dashboard/Reports/reports"
+//import MainMedic from "../Dashboard/Medics/main_medics";
+import Medics from "../Dashboard/Medics/medicos";
 const drawerWidth = 240;
 
 const styles = theme => ({
@@ -161,6 +163,7 @@ class Dashboard extends React.Component {
               <Route exact path="/Complex" component={ComplexButton} />
               <Route path={'/Chart'} component={Patients} />
               <Route path={'/Reports'} component={Reports} />
+              <Route path={'/Medics'} component={Medics} />
               <Route path={'/DashBoard/CrearPaciente'}  component={Comp1}/>
             </main>
           </div>

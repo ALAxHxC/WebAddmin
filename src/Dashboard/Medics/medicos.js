@@ -9,7 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
-
+import AddIcon from '@material-ui/icons/Add';
 export default class Medics extends React.Component {
   constructor(props) {
     super(props);
@@ -56,6 +56,9 @@ export default class Medics extends React.Component {
     } else {
       return (
         <Paper >
+          <Button variant="fab" color="primary" aria-label="Add">
+            <AddIcon />
+          </Button>
           <Table >
             <TableHead>
               <TableRow>
@@ -63,7 +66,6 @@ export default class Medics extends React.Component {
                 <TableCell >Document</TableCell>
                 <TableCell >Especialidad</TableCell>
                 <TableCell >Ver más</TableCell>
-
               </TableRow>
               {items.map(n => {
                 return (
@@ -78,7 +80,6 @@ export default class Medics extends React.Component {
                         Ver mas
                       </Button>
                     </TableCell>
-
                   </TableRow>
                 );
               })}

@@ -10,7 +10,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 
-export default class Medicos extends React.Component {
+export default class Medics extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -22,7 +22,7 @@ export default class Medicos extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://monitora-pro.herokuapp.com/patient")
+    fetch("https://monitora-pro.herokuapp.com/users/medic")
       .then(res => res.json())
       .then(
         (result) => {
@@ -61,7 +61,7 @@ export default class Medicos extends React.Component {
               <TableRow>
                 <TableCell>Nombres</TableCell>
                 <TableCell >Document</TableCell>
-                <TableCell >Descripcción (g)</TableCell>
+                <TableCell >Especialidad</TableCell>
                 <TableCell >Ver más</TableCell>
 
               </TableRow>
@@ -69,10 +69,10 @@ export default class Medicos extends React.Component {
                 return (
                   <TableRow key={n._id}>
                     <TableCell component="th" scope="row">
-                      {n.firstNames + " " + n.lastNames}
+                      {n.userData.firstNames + " " + n.userData.lastNames}
                     </TableCell>
-                    <TableCell >{n.document.identification}</TableCell>
-                    <TableCell >{n.description}</TableCell>
+                    <TableCell >{n.userData.document.identification}</TableCell>
+                    <TableCell >{n.especiality}</TableCell>
                     <TableCell >
                       <Button variant="contained" color="secondary" value={n._id} onClick={(e) => this.handleClick(n._id, e)}>
                         Ver mas
